@@ -23,6 +23,7 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Centrado + bloqueo de descarga */
         img {
             width: 100%;
             max-width: 1000px;
@@ -30,19 +31,32 @@
             display: block;
             margin-bottom: 20px;
             border-radius: 6px;
+
+            /* Protección contra descargas */
+            pointer-events: none;     /* evita clic derecho y acciones sobre la imagen */
+            -webkit-user-drag: none;  /* evita arrastrar imagen */
+            user-select: none;        /* no seleccionable */
         }
     </style>
+
+    <script>
+        /* Bloquear clic derecho en toda la página */
+        document.addEventListener("contextmenu", function(e){
+            e.preventDefault();
+        }, false);
+    </script>
 </head>
 
 <body>
-
+    <img src="images/izzi2.png" alt="izzi2">
     <h1>Te informamos que el cobro de incapacidades IMSS cambió, consulta el proceso aquí</h1>
-
+    <!-- Muevo las imágenes arriba del texto -->
     <img src="images/imagen1.jpg" alt="Imagen 1">
     <img src="images/imagen2.jpg" alt="Imagen 2">
     <img src="images/imagen3.jpg" alt="Imagen 3">
     <img src="images/imagen4.jpg" alt="Imagen 4">
 
+    
+
 </body>
 </html>
-
